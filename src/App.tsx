@@ -3,11 +3,14 @@ import './App.css'
 import PhotoThumbnail from './components/PhotoThumbnail'
 import { Photo } from './types'
 import { usePhotos } from './hooks'
+import { useStateValue } from './state'
 
 const App: React.FC = () => {
 
-  const photos = usePhotos()
+  usePhotos()
+  const [{ photos }] = useStateValue()
 
+  console.log(photos)
   if (!photos) return null
 
   return (

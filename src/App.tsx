@@ -1,25 +1,24 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css'
-import PhotoThumbnail from './components/PhotoThumbnail'
-import { Photo } from './types'
+import Photo from './components/Photo'
+import PhotoList from './components/PhotoList'
 import { usePhotos } from './hooks'
-import { useStateValue } from './state'
+
 
 const App: React.FC = () => {
 
   usePhotos()
-  const [{ photos }] = useStateValue()
-
-  console.log(photos)
-  if (!photos) return null
-
+  
   return (
     <div className="App">
-      {Object.values(photos).map((photo: Photo) => (
-        <PhotoThumbnail key={photo.id} photo={photo} />
-      ))}
+    <Router>
+          <Switch>
+            <Route path="/photos/:id" render={() => <Photo />} />
+            <Route path="/" render={() => <PhotoList />} />
+          </Switch>
+      </Router>
     </div>
   )
 }
-
 export default App

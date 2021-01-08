@@ -9,6 +9,7 @@ export const usePhotos = () =>  {
   const [, dispatch] = useStateValue()
   React.useEffect(() => {
     const fetchProducts = async () => {
+      console.log("fetching")
       const data = await getPhotos()
       dispatch(setPhotoList(data))
     }

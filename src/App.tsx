@@ -9,7 +9,7 @@ import { usePhotos } from './hooks'
 const App: React.FC = () => {
 
   usePhotos()
-  
+
   return (
     <div className="App">
     <Router>

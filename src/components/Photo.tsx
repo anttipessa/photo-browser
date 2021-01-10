@@ -9,7 +9,7 @@ const PhotoList: React.FC = () => {
   const [{ photos }] = useStateValue()
   const currentPic = photos[id]
   const previous = photos[Number(id) - 1]
-  const next = photos[Number(id) + 2]
+  const next = photos[Number(id) + 1]
 
   if (!currentPic) return null
 

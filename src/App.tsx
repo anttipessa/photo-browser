@@ -12,6 +12,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <h1>PhotoBrowser</h1>
     <Router>
           <Switch>
             <Route path="/photos/:id" render={() => <Photo />} />

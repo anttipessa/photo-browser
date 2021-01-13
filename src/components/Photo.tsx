@@ -21,7 +21,7 @@ const PhotoList: React.FC = () => {
       <img src={currentPic.url} />
       <div>Title: {currentPic.title}</div>
       <div>Id: {currentPic.id} </div>
-      <div>Album id: {currentPic.albumId} </div>
+      <Link to={`/albums/${currentPic.albumId}`}>Album</Link>
       <div className="links">
       {previous && <Link to={`/photos/${previous.id}`}>Previous</Link>}
       {next && <Link to={`/photos/${next.id}`}>Next</Link>}

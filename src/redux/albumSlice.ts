@@ -52,9 +52,9 @@ export default albums.reducer
 export const fetchAlbums = (): AppThunk => async dispatch => {
   try {
     dispatch(getAlbumsStart())
-    const photos = await getAlbums()
-    if (photos) {
-      dispatch(getAlbumsSuccess(photos))
+    const albums = await getAlbums()
+    if (albums) {
+      dispatch(getAlbumsSuccess(albums))
     }
   } catch (err) {
     dispatch(getAlbumsFailure(err.toString()))

@@ -9,6 +9,7 @@ import Photo from './components/Photo'
 import PhotoList from './components/PhotoList'
 import { fetchAlbums } from './redux/albumSlice'
 import { fetchPhotos } from './redux/photoSlice'
+import { fetchUsers } from './redux/userSlice'
 
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
   React.useEffect(() => {
     dispatch(fetchPhotos())
     dispatch(fetchAlbums())
+    dispatch(fetchUsers())
   }, [dispatch])
 
   return (

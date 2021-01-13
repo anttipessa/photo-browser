@@ -7,6 +7,8 @@ import AlbumList from './components/AlbumList'
 import NavBar from './components/NavBar'
 import Photo from './components/Photo'
 import PhotoList from './components/PhotoList'
+import User from './components/User'
+import UserList from './components/UserList'
 import { fetchAlbums } from './redux/albumSlice'
 import { fetchPhotos } from './redux/photoSlice'
 import { fetchUsers } from './redux/userSlice'
@@ -30,7 +32,9 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/photos/:id" render={() => <Photo />} />
           <Route path="/albums/:id" render={() => <Album />} />
+          <Route path="/users/:id" render={() => <User />} />
           <Route path="/albums" render={() => <AlbumList />} />
+          <Route path="/users" render={() => <UserList />} />
           <Route path="/" render={() => <PhotoList />} />
         </Switch>
       </Router>

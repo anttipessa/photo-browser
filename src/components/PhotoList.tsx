@@ -13,8 +13,7 @@ const PhotoList: React.FC = () => {
   return (
     <div className="photo-list">
       {Object.values(photos).map((photo: Photo) => (
-        <PhotoThumbnail key={photo.id} photo={photo}
-        />
+        <PhotoThumbnail key={photo.id} photo={photo}/>
       ))}
     </div>
   )

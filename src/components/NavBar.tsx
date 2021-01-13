@@ -11,6 +11,7 @@ const NavBar: React.FC = () => {
       <Tabs aria-label="simple tabs example">
         <Tab label="Photos" component={Link} to="/" />
         <Tab label="Albums" component={Link} to="/albums" />
+        <Tab label="Users" component={Link} to="/users" />
       </Tabs>
     </AppBar>
   )

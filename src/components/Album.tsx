@@ -9,6 +9,7 @@ const Album: React.FC = () => {
 
   const { photos } = useSelector((state: RootState) => state.photos)
   const { albums } = useSelector((state: RootState) => state.albums)
+  const { users } = useSelector((state: RootState) => state.users)
 
   const { id } = useParams<{ id: string }>()
   const currentId = Number(id)
@@ -16,12 +17,16 @@ const Album: React.FC = () => {
   const currentAlbum = albums.find(({ id }) => id === currentId)
   const previous = albums.find(({ id }) => id === currentId - 1)
   const next = albums.find(({ id }) => id === currentId + 1)
+  const currentUser = users.find(({ id }) => id === currentAlbum?.userId)
+  
+  console.log(currentUser)
 
   if (!currentAlbum) return null
 
   return (
     <div className="album">
       <h4>Album {id}</h4>
+      {currentUser && <Link to={`/users/${currentUser.id}`}>Made by {currentUser.name}</Link>}
       <div className="links">
         {previous && <Link to={`/albums/${previous.id}`}>Previous</Link>}
         {next && <Link to={`/albums/${next.id}`}>Next</Link>}

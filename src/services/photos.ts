@@ -1,14 +1,8 @@
 import axios from 'axios'
 import { Photo } from '../types'
+import { apiBaseUrl } from '../constants'
 
-const apiBaseUrl = 'https://jsonplaceholder.typicode.com'
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getPhotos = async (): Promise<any> => {
-  try {
-    const { data } = await axios.get<Photo[]>(`${apiBaseUrl}/photos?_page=1&_limit=20`)
+export const getPhotos = async (): Promise<Photo[] | undefined> => {
+    const { data } = await axios.get<Photo[]>(`${apiBaseUrl}/photoss?_page=1&_limit=500`)
     return data
-  } catch (e) {
-    console.error(e)
-  }
 }

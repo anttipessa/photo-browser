@@ -1,20 +1,22 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
-import { useStateValue } from '../state'
-
+import { RootState } from 'src/redux/rootReducer'
 
 const PhotoList: React.FC = () => {
 
+  const { photos } = useSelector((state: RootState) => state.photos)
+
   const { id } = useParams<{ id: string }>()
-  const [{ photos }] = useStateValue()
-  const currentPic = photos[id]
-  const previous = photos[Number(id) - 1]
-  const next = photos[Number(id) + 1]
+  const currentId = Number(id)
+
+  const currentPic = photos.find(({ id }) => id === currentId)
+  const previous = photos.find(({ id }) => id === currentId - 1)
+  const next = photos.find(({ id }) => id === currentId + 1)
 
   if (!currentPic) return null
 
   return (
-
     <div className="photo">      
       <img src={currentPic.url} />
       <div>Title: {currentPic.title}</div>

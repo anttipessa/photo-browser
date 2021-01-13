@@ -10,9 +10,10 @@ const PhotoList: React.FC = () => {
   const { photos } = useSelector((state: RootState) => state.photos)
 
   if (!photos) return null
+  
   return (
     <div className="photo-list">
-      {Object.values(photos).map((photo: Photo) => (
+      {photos.map((photo: Photo) => (
         <PhotoThumbnail key={photo.id} photo={photo}/>
       ))}
     </div>

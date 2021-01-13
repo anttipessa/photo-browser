@@ -6,10 +6,9 @@ import { RootState } from 'src/redux/rootReducer'
 const PhotoList: React.FC = () => {
 
   const { photos } = useSelector((state: RootState) => state.photos)
-
   const { id } = useParams<{ id: string }>()
+  
   const currentId = Number(id)
-
   const currentPic = photos.find(({ id }) => id === currentId)
   const previous = photos.find(({ id }) => id === currentId - 1)
   const next = photos.find(({ id }) => id === currentId + 1)

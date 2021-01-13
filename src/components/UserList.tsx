@@ -12,8 +12,8 @@ const AlbumList: React.FC = () => {
 
   return (
     <div className="photo-list">
-      {Object.values(users).map((user: User) => (
-        <UserThumbNail key={user.id} user={user}/>
+      {users.map((user: User) => (
+        <UserThumbNail key={user.id} user={user} />
       ))}
     </div>
   )

@@ -13,7 +13,7 @@ const AlbumList: React.FC = () => {
 
   return (
     <div className="photo-list">
-      {Object.values(albums).map((album: Album) => (
+      {albums.map((album: Album) => (
         <AlbumThumbnail key={album.id} album={album}/>
       ))}
     </div>

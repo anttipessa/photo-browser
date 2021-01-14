@@ -1,0 +1,8 @@
+.photoBox {
+    display: inline-flex;
+    align-items:center;
+}
+
+.photo {
+    margin: 5
+}

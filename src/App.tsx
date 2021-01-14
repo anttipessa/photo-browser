@@ -26,7 +26,6 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>PhotoBrowser</h1>
       <Router>
         <NavBar />
         <Switch>

@@ -2,12 +2,15 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 import { RootState } from 'src/redux/rootReducer'
+import { Image, PageHeader } from 'antd'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
+import "./Photo.css"
 
 const PhotoList: React.FC = () => {
 
   const { photos } = useSelector((state: RootState) => state.photos)
   const { id } = useParams<{ id: string }>()
-  
+
   const currentId = Number(id)
   const currentPic = photos.find(({ id }) => id === currentId)
   const previous = photos.find(({ id }) => id === currentId - 1)
@@ -16,15 +19,16 @@ const PhotoList: React.FC = () => {
   if (!currentPic) return null
 
   return (
-    <div className="photo">      
-      <img src={currentPic.url} />
-      <div>Title: {currentPic.title}</div>
-      <div>Id: {currentPic.id} </div>
-      <Link to={`/albums/${currentPic.albumId}`}>Album</Link>
-      <div className="links">
-      {previous && <Link to={`/photos/${previous.id}`}>Previous</Link>}
-      {next && <Link to={`/photos/${next.id}`}>Next</Link>}
-    </div>
+    <div className="photo">
+      <PageHeader> <b>Photo {currentPic.id}</b></PageHeader>
+      <div className="photoBox">
+        {previous && <Link to={`/photos/${previous.id}`}> <LeftOutlined style={{ fontSize: '50px' }} /></Link>}
+        <Image width={450} src={currentPic.url} />
+        {next && <Link to={`/photos/${next.id}`}><RightOutlined style={{ fontSize: '50px' }} /></Link>}
+      </div>
+
+      <div><b>{currentPic.title}</b> </div>
+      <Link to={`/albums/${currentPic.albumId}`}>Album {currentPic.albumId}</Link>
     </div>
   )
 }

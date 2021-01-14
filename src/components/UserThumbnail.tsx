@@ -2,10 +2,9 @@ import React from 'react'
 import { User } from '../types'
 import { Link } from 'react-router-dom'
 import { Card } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
 
 const UserThumbNail: React.FC<{ user: User }> = ({ user }) => {
-
-
 
   if (!user) return null
 
@@ -16,6 +15,8 @@ const UserThumbNail: React.FC<{ user: User }> = ({ user }) => {
         bordered
         style={{ width: 350, height: 350, display: 'inline-flex', margin: 5, backgroundColor: "aquamarine", justifyContent: "center", alignItems:"center" }}
         bodyStyle={{display: 'inline-block'}}>
+          <UserOutlined style={{fontSize: '50px'}} />
+          <div></div>
         {user.name}
       </Card>
     </Link>

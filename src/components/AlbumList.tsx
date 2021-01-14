@@ -12,7 +12,7 @@ const AlbumList: React.FC = () => {
   if (!albums) return null
 
   return (
-    <div className="photo-list">
+    <div className="album-list">
       {albums.map((album: Album) => (
         <AlbumThumbnail key={album.id} album={album}/>
       ))}

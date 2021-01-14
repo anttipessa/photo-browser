@@ -34,7 +34,7 @@ const Album: React.FC = () => {
       <h4>Album {id}</h4>
       {currentUser && <Link to={`/users/${currentUser.id}`}>Made by {currentUser.name}</Link>}
       <div className="links">
-        {previous && <Link to={`/albums/${previous.id}`}>Previous</Link>}
+        {previous && <Link to={`/albums/${previous.id}`}>Previous </Link>}
         {next && <Link to={`/albums/${next.id}`}>Next</Link>}
       </div>
       {albumPhotos.map((photo: Photo) => (

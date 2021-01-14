@@ -26,9 +26,9 @@ const User: React.FC = () => {
           <Descriptions.Item label="Username">{currentUser.username}</Descriptions.Item>
           <Descriptions.Item label="Telephone">{currentUser.phone}</Descriptions.Item>
           <Descriptions.Item label="Email"><a href={`mailto:${currentUser.email}`}>{currentUser.email}</a></Descriptions.Item>
-          <Descriptions.Item label="Address" > {currentUser.address.street}, {currentUser.address.suite}, {currentUser.address.zipcode} {currentUser.address.city}</Descriptions.Item>
-          <Descriptions.Item label="Company" > {currentUser.company.name}, {currentUser.company.catchPhrase}</Descriptions.Item>
           <Descriptions.Item label="Website"><a>{currentUser.website}</a></Descriptions.Item>
+          <Descriptions.Item label="Company" > {currentUser.company.name}, {currentUser.company.catchPhrase}</Descriptions.Item>
+          <Descriptions.Item label="Address" > {currentUser.address.street}, {currentUser.address.suite}, {currentUser.address.zipcode} {currentUser.address.city}</Descriptions.Item>
         </Descriptions>
       </Card>
       <div className="links">

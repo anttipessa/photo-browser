@@ -1,9 +1,9 @@
 import React from 'react'
-import { Album } from '../types'
+import { Album } from '../../types'
 import { RootState } from 'src/redux/rootReducer'
 import { useSelector } from 'react-redux'
-import AlbumThumbnail from './AlbumThumbnail'
-
+import AlbumThumbnail from '../AlbumThumbnail'
+import './AlbumList.css'
 
 const AlbumList: React.FC = () => {
 

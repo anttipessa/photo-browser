@@ -1,17 +1,18 @@
 import React from 'react'
-import { User } from '../types'
+import { User } from '../../types'
 import { RootState } from 'src/redux/rootReducer'
 import { useSelector } from 'react-redux'
-import UserThumbNail from './UserThumbnail'
+import UserThumbNail from '../UserThumbnail'
+import './UserList.css'
 
-const AlbumList: React.FC = () => {
+const UserList: React.FC = () => {
 
   const { users } = useSelector((state: RootState) => state.users)
 
   if (!users) return null
 
   return (
-    <div className="photo-list">
+    <div className="user-list">
       {users.map((user: User) => (
         <UserThumbNail key={user.id} user={user} />
       ))}
@@ -19,4 +20,4 @@ const AlbumList: React.FC = () => {
   )
 }
 
-export default AlbumList
+export default UserList

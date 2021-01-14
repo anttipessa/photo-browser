@@ -1,29 +1,24 @@
 import React from 'react'
 import { Album } from '../types'
 import { Link } from 'react-router-dom'
-import { Card, CardContent, makeStyles } from '@material-ui/core'
+import { Card } from 'antd'
+import { PictureOutlined } from '@ant-design/icons'
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 150,
-    minHeight: 150,
-    display: 'inline-block',
-    margin: 5,
-    backgroundColor: "aquamarine"
-  }
-})
 
 const AlbumThumbnail: React.FC<{ album: Album }> = ({ album }) => {
-
-  const classes = useStyles()
 
   if (!album) return null
 
   return (
     <Link to={`/albums/${album.id}`}>
-      <Card variant="outlined" className={classes.root} >
-        <CardContent >Album {album.id}</CardContent>
-    </Card>
+      <Card
+        hoverable
+        style={{ width: 150, height: 150, display: 'inline-flex', margin: 5, backgroundColor: "aquamarine", justifyContent: "center", alignItems: "center" }}
+      >
+        <PictureOutlined style={{ fontSize: '50px' }} />
+        <br />
+        Album {album.id}
+      </Card>
     </Link>
   )
 }

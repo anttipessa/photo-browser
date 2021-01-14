@@ -10,13 +10,13 @@ const UserThumbNail: React.FC<{ user: User }> = ({ user }) => {
 
   return (
     <Link to={`/users/${user.id}`}>
-      <Card 
+      <Card
         hoverable
         bordered
-        style={{ width: 350, height: 350, display: 'inline-flex', margin: 5, backgroundColor: "aquamarine", justifyContent: "center", alignItems:"center" }}
-        bodyStyle={{display: 'inline-block'}}>
-          <UserOutlined style={{fontSize: '50px'}} />
-          <div></div>
+        style={{ width: 350, height: 350, display: 'inline-flex', margin: 5, backgroundColor: "aquamarine", justifyContent: "center", alignItems: "center" }}
+      >
+        <UserOutlined style={{ fontSize: '50px' }} />
+        <div></div>
         {user.name}
       </Card>
     </Link>

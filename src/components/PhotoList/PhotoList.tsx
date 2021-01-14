@@ -1,9 +1,9 @@
 import React from 'react'
-import { Photo } from '../types'
-import PhotoThumbnail from './PhotoThumbnail'
+import { Photo } from '../../types'
+import PhotoThumbnail from '../PhotoThumbnail'
 import { RootState } from 'src/redux/rootReducer'
 import { useSelector } from 'react-redux'
-
+import './PhotoList.css'
 
 const PhotoList: React.FC = () => {
 

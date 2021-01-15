@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# PhotoBrowser
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Photo Browser is a simple web app representing features that are fairly common in many real life web apps out there (i.e. fetching JSON formatted data from a REST API, presenting the data on a list and perhaps demonstrating some basic navigation in form of opening a details page describing single item in detail). The website allows you to browse photos, albums and users fetched from http://jsonplaceholder.typicode.com/.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Node](https://nodejs.org/en/) (Tested with v14.15.1)
+- [Docker + docker-compose](https://www.docker.com/) (optional)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Running locally
 
-### `npm test`
+Clone the project and in the project root run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install && npm start
+```
 
-### `npm run build`
+Alternatively with Docker:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+docker-compose up -d
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then head to `localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Routes
 
-### `npm run eject`
+- `/` - Landing Page
+- `/photos` - Photo listing
+- `/photos/:id` - Single photo view
+- `/albums` - Album listing
+- `/albums/:id` - Single album view
+- `/users` - Users listing
+- `/users/:id` - Single user view
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Testing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is using cypress for e2e testing. The website must be running locally for the tests to work. Run tests headless with:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm run test:e2e
+```
+For developing the tests use:
+```
+npm run cypress:open
+```
+### Break down into end to end tests
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+These tests are checking through all the pages, all images and texts are loading and checking that all the routes are working.
 
-## Learn More
+```
+describe('Photo Listing', function () {
+  it('successfully loads', function () {
+    cy.visit('/photos')
+  })
+  it('contains photo thumbnails', function () {
+    cy.get('[alt="harum velit vero totam"]').should('be.visible')
+    cy.get('[alt="accusamus beatae ad facilis cum similique qui sunt"]').should('be.visible')
+  })
+  it('photo thumbnails can be clicked', function () {
+    cy.get('[alt="harum velit vero totam"]').click()
+    cy.contains('Photo 23')
+  })
+})
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The website is hosted on Netlify, with a CI / CD pipeline running on Github Actions. The pipeline checks the code with lint, tests it with cypress and then publishes it to Netlify. Live version of the site can be found [here](https://photo-browser-app.netlify.app/).
+
+## Built With
+
+* [React](https://reactjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Ant Design](https://ant.design/) - React UI-library
+* [axios](https://github.com/axios/axios) - Api requests
+* [React Router](https://reactrouter.com/) - Routing
+* [cypress](https://www.cypress.io/) - JavaScript End to End Testing Framework
+* [Redux Toolkit](https://redux-toolkit.js.org/) - State management
+* [Netlify](https://www.netlify.com/) - Hosting
+* [Github Actions](https://github.com/features/actions) - CI / CD
+* [Docker](https://www.docker.com/)

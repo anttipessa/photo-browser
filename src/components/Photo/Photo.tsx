@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
-import { RootState } from 'src/redux/rootReducer'
+import { RootState } from '../../redux/rootReducer'
 import { Image, PageHeader } from 'antd'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import "./Photo.css"
 
-const PhotoList: React.FC = () => {
+const Photo: React.FC = () => {
 
   const { photos } = useSelector((state: RootState) => state.photos)
   const { id } = useParams<{ id: string }>()
@@ -26,11 +26,10 @@ const PhotoList: React.FC = () => {
         <Image width={450} src={currentPic.url} />
         {next && <Link to={`/photos/${next.id}`}><RightOutlined style={{ fontSize: '50px' }} /></Link>}
       </div>
-
       <div><b>{currentPic.title}</b> </div>
       <Link to={`/albums/${currentPic.albumId}`}>Album {currentPic.albumId}</Link>
     </div>
   )
 }
 
-export default PhotoList
+export default Photo

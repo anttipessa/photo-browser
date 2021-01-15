@@ -1,6 +1,6 @@
 import React from 'react'
 import { Album } from '../../types'
-import { RootState } from 'src/redux/rootReducer'
+import { RootState } from '../../redux/rootReducer'
 import { useSelector } from 'react-redux'
 import AlbumThumbnail from '../AlbumThumbnail'
 import './AlbumList.css'

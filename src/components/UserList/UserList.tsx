@@ -1,6 +1,6 @@
 import React from 'react'
 import { User } from '../../types'
-import { RootState } from 'src/redux/rootReducer'
+import { RootState } from '../../redux/rootReducer'
 import { useSelector } from 'react-redux'
 import UserThumbNail from '../UserThumbnail'
 import './UserList.css'

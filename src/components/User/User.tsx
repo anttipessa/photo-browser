@@ -3,7 +3,7 @@ import { Card, Descriptions } from 'antd'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { RootState } from 'src/redux/rootReducer'
+import { RootState } from '../../redux/rootReducer'
 import './User.css'
 
 const User: React.FC = () => {

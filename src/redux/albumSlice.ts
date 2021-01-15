@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { getAlbums } from 'src/services/albums'
-import { Album } from 'src/types'
+import { getAlbums } from '../services/albums'
+import { Album } from '../types'
 import { AppThunk } from './store'
 
 

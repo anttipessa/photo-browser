@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { getUsers } from 'src/services/users'
-import { User } from 'src/types'
+import { getUsers } from '../services/users'
+import { User } from '../types'
 import { AppThunk } from './store'
 
 
@@ -53,7 +53,6 @@ export const fetchUsers = (): AppThunk => async dispatch => {
   try {
     dispatch(getUsersStart())
     const users = await getUsers()
-    console.log("hello", users)
     if (users) {
       dispatch(getUsersSuccess(users))
     }

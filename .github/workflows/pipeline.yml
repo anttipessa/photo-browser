@@ -34,17 +34,11 @@ jobs:
           command: npm run test:e2e
           start: npm start
           wait-on: http://localhost:3000
-  deploy:
-    needs: pre-deploy
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
-          publish-dir: './dist'
-          production-branch: master
+          publish-dir: './build'
+          production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false

@@ -1,22 +1,22 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
+import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
-import { PageHeader } from 'antd'
-
 
 const NavBar: React.FC = () => {
 
   return (
-    <AppBar position="static" >
-      <Tabs aria-label="simple tab">
-      <PageHeader>PhotoBrowser</PageHeader>
-        <Tab label="Photos" component={Link} to="/" />
-        <Tab label="Albums" component={Link} to="/albums" />
-        <Tab label="Users" component={Link} to="/users" />
-      </Tabs>
-    </AppBar>
+    <Menu mode="horizontal">
+      <Menu.Item key="/"> <Link to="/">PhotoBrowser</Link></Menu.Item>
+      <Menu.Item key="/photos">
+        <Link to="/photos">Photos</Link>
+      </Menu.Item>
+      <Menu.Item key="/albums">
+        <Link to="/albums">Albums</Link>
+      </Menu.Item>
+      <Menu.Item key="/users">
+        <Link to="/users">Users</Link>
+      </Menu.Item>
+    </Menu>
   )
 }
 

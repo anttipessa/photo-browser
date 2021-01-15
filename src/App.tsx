@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css'
 import Album from './components/Album'
 import AlbumList from './components/AlbumList/AlbumList'
+import LandingPage from './components/LandingPage/LandingPage'
 import NavBar from './components/NavBar'
 import Photo from './components/Photo/Photo'
 import PhotoList from './components/PhotoList/PhotoList'
@@ -19,11 +20,10 @@ const App: React.FC = () => {
   const dispatch = useDispatch()
 
   React.useEffect(() => {
-    console.log("fetching")
     dispatch(fetchPhotos())
     dispatch(fetchAlbums())
     dispatch(fetchUsers())
-  }, [dispatch])
+  }, [])
 
   return (
     <div className="App">
@@ -33,9 +33,10 @@ const App: React.FC = () => {
           <Route path="/photos/:id" render={() => <Photo />} />
           <Route path="/albums/:id" render={() => <Album />} />
           <Route path="/users/:id" render={() => <User />} />
-          <Route path="/albums" render={() => <AlbumList />} />
-          <Route path="/users" render={() => <UserList />} />
-          <Route path="/" render={() => <PhotoList />} />
+          <Route exact path="/albums" render={() => <AlbumList />} />
+          <Route exact path="/users" render={() => <UserList />} />
+          <Route exact path="/photos" render={() => <PhotoList />} />
+          <Route path="/" render={() => <LandingPage />} />
         </Switch>
       </Router>
     </div>

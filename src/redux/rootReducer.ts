@@ -5,9 +5,9 @@ import usersReducer from './userSlice'
 
 
 const rootReducer = combineReducers({
-    photos: photosReducer,
-    albums: albumsReducer,
-    users: usersReducer
+  photos: photosReducer,
+  albums: albumsReducer,
+  users: usersReducer
 })
 
 export type RootState = ReturnType<typeof rootReducer>

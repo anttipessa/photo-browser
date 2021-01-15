@@ -6,18 +6,18 @@ const NavBar: React.FC = () => {
 
   return (
     <div className="nav-bar">
-    <Menu mode="horizontal">
-      <Menu.Item key="/"> <Link to="/">PhotoBrowser</Link></Menu.Item>
-      <Menu.Item key="/photos">
-        <Link to="/photos">Photos</Link>
-      </Menu.Item>
-      <Menu.Item key="/albums">
-        <Link to="/albums">Albums</Link>
-      </Menu.Item>
-      <Menu.Item key="/users">
-        <Link to="/users">Users</Link>
-      </Menu.Item>
-    </Menu>
+      <Menu mode="horizontal">
+        <Menu.Item key="/"> <Link to="/">PhotoBrowser</Link></Menu.Item>
+        <Menu.Item key="/photos">
+          <Link to="/photos">Photos</Link>
+        </Menu.Item>
+        <Menu.Item key="/albums">
+          <Link to="/albums">Albums</Link>
+        </Menu.Item>
+        <Menu.Item key="/users">
+          <Link to="/users">Users</Link>
+        </Menu.Item>
+      </Menu>
     </div>
   )
 }

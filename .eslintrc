@@ -18,7 +18,8 @@
       "@typescript-eslint/no-explicit-any": 1,
       "no-case-declarations": 0,
       "react/prop-types": 0,
-      "semi": [1, "never"]
+      "semi": [1, "never"],
+      "indent": ["error", 2]
     },
     "settings": {
       "react": {

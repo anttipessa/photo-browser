@@ -32,8 +32,8 @@ const User: React.FC = () => {
         </Descriptions>
       </Card>
       <div className="links">
-        {previous && <Link to={`/users/${previous.id}`}> <LeftOutlined style={{ fontSize: '50px' }} /></Link>}
-        {next && <Link to={`/users/${next.id}`}><RightOutlined style={{ fontSize: '50px' }} /></Link>}
+        {previous && <Link to={`/users/${previous.id}`}> <LeftOutlined className="previous-button" style={{ fontSize: '50px' }} /></Link>}
+        {next && <Link to={`/users/${next.id}`}><RightOutlined className="next-button" style={{ fontSize: '50px' }} /></Link>}
       </div>
     </div>
   )

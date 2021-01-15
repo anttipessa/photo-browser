@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const NavBar: React.FC = () => {
 
   return (
+    <div className="nav-bar">
     <Menu mode="horizontal">
       <Menu.Item key="/"> <Link to="/">PhotoBrowser</Link></Menu.Item>
       <Menu.Item key="/photos">
@@ -17,6 +18,7 @@ const NavBar: React.FC = () => {
         <Link to="/users">Users</Link>
       </Menu.Item>
     </Menu>
+    </div>
   )
 }
 

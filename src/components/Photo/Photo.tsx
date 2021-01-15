@@ -22,9 +22,9 @@ const Photo: React.FC = () => {
     <div className="photo">
       <PageHeader> <b>Photo {currentPic.id}</b></PageHeader>
       <div className="photoBox">
-        {previous && <Link to={`/photos/${previous.id}`}> <LeftOutlined style={{ fontSize: '50px' }} /></Link>}
-        <Image width={450} src={currentPic.url} />
-        {next && <Link to={`/photos/${next.id}`}><RightOutlined style={{ fontSize: '50px' }} /></Link>}
+        {previous && <Link to={`/photos/${previous.id}`}> <LeftOutlined className="previous-button" style={{ fontSize: '50px' }} /></Link>}
+        <Image width={450} src={currentPic.url} alt={currentPic.title} />
+        {next && <Link to={`/photos/${next.id}`}><RightOutlined className="next-button" style={{  fontSize: '50px' }} /></Link>}
       </div>
       <div><b>{currentPic.title}</b> </div>
       <Link to={`/albums/${currentPic.albumId}`}>Album {currentPic.albumId}</Link>

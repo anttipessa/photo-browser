@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  pre-deploy:
+  deploy:
     runs-on: ubuntu-18.04
 
     strategy:
